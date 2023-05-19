@@ -1,5 +1,5 @@
 
-# Simple Symbol Ranking Compressor/Decompressor
+# Simple Symbol Ranking Compressor
 
 ## How To Build
 ```
@@ -7,7 +7,7 @@
 ```
 Resulting executable is in `zig-out/bin/srz`
 
-## How To use
+## How To Use
 For the sake of simplicity,
 `srz` can only read from `stdin` (if it is not a `tty`)
 and can only write to `stdout` (if it is not a `tty`).
