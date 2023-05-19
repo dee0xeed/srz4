@@ -58,7 +58,7 @@ eff stands for 'efficiency'.
 SR uses 3 byte context (hash of 4 most recently seen bytes).
 For each context value SR maintains 4 byte list of symbols.
 Symbols in these lists are kept ordered by recency using savage MTF.
-Position of a symbol in a list is it'rank (1,2,3,4).
+Position of a symbol in a list is it's rank (1,2,3,4).
 Symbols that were not in a list are encoded as is (literals).
 Ranks are encoded with unary codes, like this:
 
