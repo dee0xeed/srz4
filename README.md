@@ -90,3 +90,4 @@ AC uses 26 bit context which includes:
 * [sr2](https://encode.su/threads/881-Symbol-ranking-compression)
 * [srx](https://encode.su/threads/4038-SRX-fast-multi-threaded-SR-compressor)
 * [MTF](https://hbfs.wordpress.com/2009/03/03/ad-hoc-compression-methods-move-to-front/)
+* [Unary coding](https://en.wikipedia.org/wiki/Unary_coding)

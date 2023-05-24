@@ -57,7 +57,6 @@ pub const Ranker = struct {
                 const b2 = (lst & 0x0000_ff00) << 8;  // b2 <- b1
                 const b1 = (lst & 0x0000_00ff) << 8;  // b1 <- b0
                 lst = b3 | b2 | b1 | s;
-
                 self.cnt[self.ctx] = 0;
             },
 
