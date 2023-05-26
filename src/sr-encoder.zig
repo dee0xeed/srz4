@@ -31,9 +31,7 @@ pub const SREncoder = struct {
     }
 
     inline fn outputLiteral(self: *SREncoder, sym: u8) !void {
-
         var k: isize = 7;
-
         while (k >= 0) : (k -= 1) {
             var bit: u1 = @intCast(u1, (sym >> @intCast(u3, k)) & 1);
             try self.encoder.take(bit);

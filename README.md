@@ -87,7 +87,8 @@ AC uses 26 bit context which includes:
 
 ## Links
 
-* [sr2](https://encode.su/threads/881-Symbol-ranking-compression)
-* [srx](https://encode.su/threads/4038-SRX-fast-multi-threaded-SR-compressor)
+* [srank](https://www.cs.auckland.ac.nz/~peter-f/FTPfiles/srank.c) by P.M.Fenwick, 1996
+* [sr2](https://encode.su/threads/881-Symbol-ranking-compression) by M.Mahoney, 2007
+* [srx](https://encode.su/threads/4038-SRX-fast-multi-threaded-SR-compressor) by Mai Thanh Minh, 2023
 * [MTF](https://hbfs.wordpress.com/2009/03/03/ad-hoc-compression-methods-move-to-front/)
 * [Unary coding](https://en.wikipedia.org/wiki/Unary_coding)
