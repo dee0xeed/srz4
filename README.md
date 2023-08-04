@@ -3,7 +3,7 @@
 
 ## How To Build
 ```
-/opt/zig-0.10.1/zig build -Drelease-fast
+/opt/zig-0.11/zig build -Doptimize=ReleaseFast
 ```
 Resulting executable is in `zig-out/bin/srz`
 

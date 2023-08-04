@@ -15,7 +15,7 @@ pub const BitPredictor = struct {
     pub fn init(a: Allocator, ctx_len: u5) !BitPredictor {
         var bp = BitPredictor{};
         bp.p0 = try a.alloc(u16, @as(u32, 1) << ctx_len);
-        mem.set(u16, bp.p0, P0MAX / 2);
+        @memset(bp.p0, P0MAX / 2);
         return bp;
     }
 

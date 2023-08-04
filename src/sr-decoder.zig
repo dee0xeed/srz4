@@ -41,8 +41,8 @@ pub const SRDecoder = struct {
         } else {
             var lst = self.ranker.lst[self.ranker.ctx];
             if (rank > 1) rank -= 1;
-            var shift = @intCast(u5, (rank - 1) * 8);
-            sym = @intCast(u8, (lst >> shift) & 0xFF);
+            var shift: u5 = @intCast((rank - 1) * 8);
+            sym = @intCast((lst >> shift) & 0xFF);
         }
 
         self.ranker.update(sym, rank);

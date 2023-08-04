@@ -39,7 +39,7 @@ pub const Encoder = struct {
         self.bp.update(bit);
 
         while (0 == ((self.xl ^ self.xr) & 0xFF00_0000)) {
-            var byte = @intCast(u8, self.xr >> 24);
+            var byte: u8 = @intCast(self.xr >> 24);
             try self.writer.take(byte);
             self.xl <<= 8;
             self.xr = (self.xr << 8) | 0x0000_00FF;
@@ -47,7 +47,7 @@ pub const Encoder = struct {
     }
 
     pub fn foldup(self: *Encoder) !void {
-        var byte = @intCast(u8, self.xr >> 24);
+        var byte: u8 = @intCast(self.xr >> 24);
         try self.writer.take(byte);
     }
 };

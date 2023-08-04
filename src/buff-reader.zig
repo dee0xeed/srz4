@@ -20,7 +20,7 @@ pub const Reader = struct {
 
     pub inline fn give(self: *Reader) !?u8 {
         if (0 == self.bcnt) {
-            self.bcnt = @intCast(u32, try self.file.read(self.buff[0..]));
+            self.bcnt = @intCast(try self.file.read(self.buff[0..]));
             if (0 == self.bcnt) return null;
             self.curr = 0;
         }

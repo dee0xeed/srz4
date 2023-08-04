@@ -20,10 +20,12 @@ pub const Ranker = struct {
         const len = @as(u32, 1) << (8 * ORDER);
 
         ranker.lst = try a.alloc(u32, len);
-        mem.set(u32, ranker.lst, 0);
+        //mem.set(u32, ranker.lst, 0);
+        @memset(ranker.lst, 0);
 
         ranker.cnt = try a.alloc(u4, len);
-        mem.set(u4, ranker.cnt, 0);
+        //mem.set(u4, ranker.cnt, 0);
+        @memset(ranker.cnt, 0);
 
         return ranker;
     }
