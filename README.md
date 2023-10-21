@@ -17,7 +17,7 @@ So, just use redirections and pipe-lining, like this:
 ### Compression
 ```
 A. srz c < file > file.srz
-B. a-prog | srz > file.srz
+B. a-prog | srz c > file.srz
 ```
 
 ### Decompression
