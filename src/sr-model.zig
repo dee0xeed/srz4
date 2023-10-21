@@ -34,11 +34,10 @@ pub const Ranker = struct {
 
         var lst = self.lst[self.ctx];
         var rank: u32 = 0;
-        var k: u32 = 0;
 
-        while (k < 4) : (k += 1) {
+        for (0 .. 4) |k| {
             if (sym == lst & 0xff) {
-                rank = k + 1;
+                rank = @intCast(k + 1);
                 break;
             }
             lst >>= 8;

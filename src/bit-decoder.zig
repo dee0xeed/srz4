@@ -25,9 +25,7 @@ pub const Decoder = struct {
         };
 
         var byte: u8 = undefined;
-        var k: usize = 0;
-
-        while (k < 4) : (k += 1) {
+        for (0 .. 4) |_| {
             byte = try r.give() orelse 0;
             d.x = (d.x << 8) | byte;
         }

@@ -31,8 +31,7 @@ pub const SRDecoder = struct {
 
         var sym: u8 = 0;
         if (2 == rank) { // literal
-            var k: isize = 0;
-            while (k < 8) : (k += 1) {
+            for (0 .. 8) |_| {
                 bit = try self.decoder.give();
                 self.decoder.bp.cx = (self.decoder.bp.cx << 1) | bit;
                 sym = (sym << 1) | bit;

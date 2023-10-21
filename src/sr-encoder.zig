@@ -17,9 +17,8 @@ pub const SREncoder = struct {
     inline fn outputRank(self: *SREncoder, rank: u32) !void {
 
         var n0: u32 = rank - 1;
-        var k: isize = 0;
 
-        while (k < n0) : (k += 1) {
+        for (0 .. n0) |_| {
             try self.encoder.take(0);
             // update LEVEL-2 context
             self.encoder.bp.cx <<= 1;
