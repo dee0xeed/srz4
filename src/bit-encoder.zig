@@ -16,7 +16,7 @@ pub const Encoder = struct {
     xr: u32 = 0xFFFF_FFFF,
 
     pub fn init(bp: *BitPredictor, f: *fs.File, w: *Writer) Encoder {
-        var self = Encoder {
+        const self = Encoder {
             .bp = bp,
             .file = f,
             .writer = w,
@@ -39,7 +39,7 @@ pub const Encoder = struct {
         self.bp.update(bit);
 
         while (0 == ((self.xl ^ self.xr) & 0xFF00_0000)) {
-            var byte: u8 = @intCast(self.xr >> 24);
+            const byte: u8 = @intCast(self.xr >> 24);
             try self.writer.take(byte);
             self.xl <<= 8;
             self.xr = (self.xr << 8) | 0x0000_00FF;
@@ -47,7 +47,7 @@ pub const Encoder = struct {
     }
 
     pub fn foldup(self: *Encoder) !void {
-        var byte: u8 = @intCast(self.xr >> 24);
+        const byte: u8 = @intCast(self.xr >> 24);
         try self.writer.take(byte);
     }
 };

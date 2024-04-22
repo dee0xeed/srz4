@@ -9,14 +9,14 @@ pub const SREncoder = struct {
     encoder: *Encoder = undefined,
 
     pub fn init(ranker: *Ranker, encoder: *Encoder) SREncoder {
-        var sr_encoder = SREncoder{.ranker = ranker, .encoder = encoder};
+        const sr_encoder = SREncoder{.ranker = ranker, .encoder = encoder};
         return sr_encoder;
     }
 
     /// emits unary code for the rank
     inline fn outputRank(self: *SREncoder, rank: u32) !void {
 
-        var n0: u32 = rank - 1;
+        const n0: u32 = rank - 1;
 
         for (0 .. n0) |_| {
             try self.encoder.take(0);
@@ -32,8 +32,8 @@ pub const SREncoder = struct {
     inline fn outputLiteral(self: *SREncoder, sym: u8) !void {
         var k: isize = 7;
         while (k >= 0) : (k -= 1) {
-            var n: u3 = @intCast(k);
-            var bit: u1 = @intCast((sym >> n) & 1);
+            const n: u3 = @intCast(k);
+            const bit: u1 = @intCast((sym >> n) & 1);
             try self.encoder.take(bit);
             // update LEVEL-2 context
             self.encoder.bp.cx = (self.encoder.bp.cx << 1) | bit;
@@ -42,13 +42,13 @@ pub const SREncoder = struct {
 
     pub inline fn take(self: *SREncoder, sym: u8) !void {
 
-        var rank = self.ranker.getRank(sym);
+        const rank = self.ranker.getRank(sym);
 
         if (0 == rank) { // miss
             try self.outputRank(2);
             try self.outputLiteral(sym);
         } else {         // hit
-            var r = if (1 == rank) rank else rank + 1;
+            const r = if (1 == rank) rank else rank + 1;
             try self.outputRank(r);
         }
 
