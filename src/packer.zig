@@ -25,7 +25,7 @@ pub fn compress(rf: *fs.File, wf: *fs.File, a: Allocator) !void {
     var sr_encoder = SREncoder.init(&ranker, &encoder);
 
     // store file header
-    var hdr: [5]u8 = .{'S','R','Z', '4', 0x55};
+    const hdr: [5]u8 = .{'S','R','Z', '4', 0x55};
     // NOTE about 0x55
     // hi nibble (4 or 5) is for tweaking range coder adaptivity, see DS const in bit-predictor
     // lo nibble (5 or 6 or 7) is for hash tweaking, see sr-model in the very end
@@ -41,7 +41,7 @@ pub fn compress(rf: *fs.File, wf: *fs.File, a: Allocator) !void {
     try writer.take(hdr[4]);
 
     while (true) {
-        var byte = try reader.give() orelse break;
+        const byte = try reader.give() orelse break;
         try sr_encoder.take(byte);
     }
 

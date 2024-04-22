@@ -1,9 +1,9 @@
 
 # Simple Symbol Ranking Compressor
 
-## How To Build
+## How To Build (zig 0.12 required)
 ```
-/opt/zig-0.11/zig build -Doptimize=ReleaseFast
+/opt/zig-0.12/zig build -Doptimize=ReleaseFast
 ```
 Resulting executable is in `zig-out/bin/srz`
 
@@ -17,7 +17,7 @@ So, just use redirections and pipe-lining, like this:
 ### Compression
 ```
 A. srz c < file > file.srz
-B. a-prog | srz > file.srz
+B. a-prog | srz c > file.srz
 ```
 
 ### Decompression

@@ -50,7 +50,7 @@ pub const Decoder = struct {
             self.xl <<= 8;
             self.xr = (self.xr << 8) | 0x0000_00FF;
 
-            var byte = try self.reader.give() orelse 0;
+            const byte = try self.reader.give() orelse 0;
             self.x = (self.x << 8) | byte;
         }
 

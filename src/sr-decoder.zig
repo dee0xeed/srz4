@@ -9,7 +9,7 @@ pub const SRDecoder = struct {
     decoder: *Decoder = undefined,
 
     pub fn init(ranker: *Ranker, decoder: *Decoder) SRDecoder {
-        var sr_decoder = SRDecoder{.ranker = ranker, .decoder = decoder};
+        const sr_decoder = SRDecoder{.ranker = ranker, .decoder = decoder};
         return sr_decoder;
     }
 
@@ -38,9 +38,9 @@ pub const SRDecoder = struct {
             }
             rank = 0;
         } else {
-            var lst = self.ranker.lst[self.ranker.ctx];
+            const lst = self.ranker.lst[self.ranker.ctx];
             if (rank > 1) rank -= 1;
-            var shift: u5 = @intCast((rank - 1) * 8);
+            const shift: u5 = @intCast((rank - 1) * 8);
             sym = @intCast((lst >> shift) & 0xFF);
         }
 

@@ -8,7 +8,7 @@ const packer = @import("packer.zig");
 
 fn help(prog: []const u8) void {
     std.debug.print("  to compress: {s} c < file > file.srz\n", .{prog});
-    std.debug.print("           or: prog | {s} > file.srz\n", .{prog});
+    std.debug.print("           or: prog | {s} c > file.srz\n", .{prog});
     std.debug.print("to decompress: {s} d < file.srz > file\n", .{prog});
 }
 
