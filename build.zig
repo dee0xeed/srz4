@@ -11,8 +11,8 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
         .single_threaded = true,
+        .strip = true,
     });
 
-//    exe.strip = true;
     b.installArtifact(exe);
 }
