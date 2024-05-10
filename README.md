@@ -76,7 +76,7 @@ and the latter is greater than any other.
 
 ### Arithmetic codec
 
-Bit stream from SR is processed by arithmetic codec (borrowed from fpaq0p).
+Bit stream from SR is processed by arithmetic codec (borrowed from [fpaq0p](https://nishi.dreamhosters.com/u/fpaq0p.cpp)).
 AC uses 26 bit context which includes:
 
 * leading `1`, 1 bit (models position of bit in a codeword)
