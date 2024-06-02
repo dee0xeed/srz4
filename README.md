@@ -87,6 +87,7 @@ AC uses 26 bit context which includes:
 
 ## Links
 
+* [enwik9 benchmark](https://www.mattmahoney.net/dc/text.html)
 * [srank (C)](https://www.cs.auckland.ac.nz/~peter-f/FTPfiles/srank.c) by P.M.Fenwick, 1996
 * [sr2 (C++)](https://encode.su/threads/881-Symbol-ranking-compression) by M.Mahoney, 2007
 * [srx (Rust)](https://encode.su/threads/4038-SRX-fast-multi-threaded-SR-compressor) by Mai Thanh Minh, 2023
