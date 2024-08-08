@@ -1,7 +1,7 @@
 
 # Simple Symbol Ranking Compressor
 
-## How To Build (zig 0.12 required)
+## How To Build (zig 0.14 required)
 ```
 /opt/zig-0.14/zig build -Doptimize=ReleaseFast
 ```
