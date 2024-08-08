@@ -3,7 +3,7 @@
 
 ## How To Build (zig 0.12 required)
 ```
-/opt/zig-0.12/zig build -Doptimize=ReleaseFast
+/opt/zig-0.14/zig build -Doptimize=ReleaseFast
 ```
 Resulting executable is in `zig-out/bin/srz`
 
